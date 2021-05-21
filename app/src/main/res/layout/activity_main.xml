@@ -36,7 +36,7 @@
         <ImageView
             android:layout_marginTop="@dimen/_26sdp"
             android:layout_width="@dimen/_160sdp"
-            android:layout_toRightOf="@id/ic_menu"
+            android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/_8sdp"
             android:layout_height="@dimen/_40sdp"
             android:src="@drawable/logo2"
