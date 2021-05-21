@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/zero"
+        android:title="0%" />
+
+    <item
+        android:id="@+id/ten"
+        android:title="10%" />
+
+    <item
+        android:id="@+id/twenty"
+        android:title="20%" />
+
+    <item
+        android:id="@+id/thirty"
+        android:title="30%" />
+
+    <item
+        android:id="@+id/fourty"
+        android:title="40%" />
+
+    <item
+        android:id="@+id/fivety"
+        android:title="50%" />
+
+    <item
+        android:id="@+id/sixty"
+        android:title="60%" />
+
+    <item
+        android:id="@+id/seventy"
+        android:title="70%" />
+
+    <item
+        android:id="@+id/eighty"
+        android:title="80%" />
+
+    <item
+        android:id="@+id/ninety"
+        android:title="90%" />
+
+    <item
+        android:id="@+id/hundret"
+        android:title="100%" />
+
+
+</menu>
