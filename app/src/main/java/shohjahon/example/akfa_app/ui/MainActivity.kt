@@ -9,11 +9,13 @@ import android.view.WindowManager
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import shohjahon.example.akfa_app.R
 import shohjahon.example.akfa_app.ui.home.HomeFragment
 import shohjahon.example.akfa_app.ui.profile.ProfileFragment
 import shohjahon.example.akfa_app.ui.settings.SettingsFragment
+@AndroidEntryPoint
 
 @Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {

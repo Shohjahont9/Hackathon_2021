@@ -2,16 +2,35 @@ package shohjahon.example.akfa_app.ui.login
 
 import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log.println
 import android.view.View
 import android.view.WindowManager
+import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import com.example.note.ui.utils.visible
+import com.google.gson.JsonObject
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_login.*
 import shohjahon.example.akfa_app.R
 import shohjahon.example.akfa_app.ui.MainActivity
+import shohjahon.example.akfa_app.utils.exhaustive
+import shohjahon.example.akfa_app.utils.hideKeyBoard
+import uz.fizmasoft.xatlov.db.preferences.PreferencesManager
+import uz.fizmasoft.xatlov.utils.Status
+import javax.inject.Inject
 
+@AndroidEntryPoint
 @Suppress("DEPRECATION")
 class LoginActivity : AppCompatActivity() {
+
+    private val viewModel: LoginViewModel by viewModels()
+
+    @Inject
+    private lateinit var  preferences: PreferencesManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -26,8 +45,41 @@ class LoginActivity : AppCompatActivity() {
         window.statusBarColor = Color.TRANSPARENT
 
         llyes.setOnClickListener {
+            if (et_username.text.toString().isNotEmpty() && et_password.text.toString()
+                    .isNotEmpty()
+            ) {
+
+                val data = JsonObject()
+                data.addProperty("username", et_username.text.toString().trim())
+                data.addProperty("password", et_password.text.toString().trim())
+                viewModel.login(data.toString())
+                observeLogin()
+                hideKeyBoard(llyes)
+
+            }else Toast.makeText(applicationContext, "Bo`sh maydonlarni to`ldiring", Toast.LENGTH_SHORT).show()
             startActivity(Intent(applicationContext, MainActivity::class.java))
             finish()
         }
+
     }
+
+    private fun observeLogin() {
+            viewModel.loginToApp.observe(this, Observer {
+                when (it.status) {
+                    Status.LOADING -> animationView.visible(true)
+                    Status.SUCCESS -> {
+                        animationView.visible(false)
+                        val data = it.data
+                        if (data != null) {
+                            val token = data.token
+                           preferences.userToken = token!!
+                        } else{}
+                    }
+                    Status.ERROR -> {
+                        animationView.visible(false)
+                    }
+                }.exhaustive
+            })
+        }
+
 }

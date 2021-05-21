@@ -94,5 +94,6 @@ dependencies {
     kapt "androidx.hilt:hilt-compiler:1.0.0-beta01"
     annotationProcessor "com.google.dagger:dagger-android-processor:2.11"
 
-
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }
