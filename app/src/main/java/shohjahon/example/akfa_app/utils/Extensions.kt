@@ -1,27 +1,16 @@
 package com.example.note.ui.utils
 
-import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
 import android.view.View
-import android.view.animation.AnimationUtils
 import android.view.inputmethod.InputMethodManager
 import android.widget.DatePicker
 import android.widget.EditText
-import android.widget.FrameLayout
 import android.widget.Toast
-import androidx.annotation.IdRes
-import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
-import androidx.interpolator.view.animation.FastOutSlowInInterpolator
-import androidx.navigation.NavController
-import androidx.navigation.NavOptions
-import androidx.navigation.Navigator
-import com.example.note.R
-import com.google.android.material.snackbar.Snackbar
+import shohjahon.example.akfa_app.R
 import java.util.*
 
 
@@ -51,6 +40,7 @@ fun Fragment.nextPageMain(fragment: Fragment, tag: String, isBack: Boolean, bund
     else
         transaction.replace(R.id.frameFragment, fragment).commit()
 }
+
 
 fun Fragment.backPageMain(fragment: Fragment) {
     val fragmentManager = requireActivity().supportFragmentManager

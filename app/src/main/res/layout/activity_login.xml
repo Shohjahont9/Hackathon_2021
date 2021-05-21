@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.login.LoginFragment">
+    tools:context=".ui.login.LoginActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -31,19 +31,19 @@
             app:layout_constraintTop_toBottomOf="@id/cv_bg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_26sdp"
+            android:layout_marginTop="@dimen/_32sdp"
             android:fontFamily="@font/g_bold"
             android:text="AKFA statistics"
             android:textColor="@color/black"
-            android:textSize="@dimen/_25ssp" />
+            android:textSize="@dimen/_30ssp" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_login"
             app:cardCornerRadius="@dimen/_16sdp"
             app:cardElevation="@dimen/_2sdp"
-            app:layout_constraintBottom_toTopOf="@id/llyes"
             app:layout_constraintTop_toBottomOf="@id/tv_akfa"
             android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_32sdp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginEnd="@dimen/_16sdp">
@@ -126,4 +126,5 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
