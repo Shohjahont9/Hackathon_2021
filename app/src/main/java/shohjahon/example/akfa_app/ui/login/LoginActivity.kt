@@ -22,14 +22,15 @@ import uz.fizmasoft.xatlov.db.preferences.PreferencesManager
 import uz.fizmasoft.xatlov.utils.Status
 import javax.inject.Inject
 
-@AndroidEntryPoint
 @Suppress("DEPRECATION")
+
+@AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
 
     private val viewModel: LoginViewModel by viewModels()
 
     @Inject
-    private lateinit var  preferences: PreferencesManager
+    lateinit var preferences: PreferencesManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +45,11 @@ class LoginActivity : AppCompatActivity() {
         }
         window.statusBarColor = Color.TRANSPARENT
 
+        if(preferences.isPermission){
+            startActivity(Intent(applicationContext, MainActivity::class.java))
+            finish()
+        }
+
         llyes.setOnClickListener {
             if (et_username.text.toString().isNotEmpty() && et_password.text.toString()
                     .isNotEmpty()
@@ -56,30 +62,37 @@ class LoginActivity : AppCompatActivity() {
                 observeLogin()
                 hideKeyBoard(llyes)
 
-            }else Toast.makeText(applicationContext, "Bo`sh maydonlarni to`ldiring", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(applicationContext, MainActivity::class.java))
-            finish()
+            } else Toast.makeText(
+                applicationContext,
+                "Bo`sh maydonlarni to`ldiring",
+                Toast.LENGTH_SHORT
+            ).show()
+
         }
 
     }
 
     private fun observeLogin() {
-            viewModel.loginToApp.observe(this, Observer {
-                when (it.status) {
-                    Status.LOADING -> animationView.visible(true)
-                    Status.SUCCESS -> {
-                        animationView.visible(false)
-                        val data = it.data
-                        if (data != null) {
-                            val token = data.token
-                           preferences.userToken = token!!
-                        } else{}
+        viewModel.loginToApp.observe(this, Observer {
+            when (it.status) {
+                Status.LOADING -> animationView.visible(true)
+                Status.SUCCESS -> {
+                    animationView.visible(false)
+                    val data = it.data
+                    if (data != null) {
+                        val token = data.token
+                        preferences.userToken = token!!
+                        preferences.isPermission= true
+                        startActivity(Intent(applicationContext, MainActivity::class.java))
+                        finish()
+                    } else {
                     }
-                    Status.ERROR -> {
-                        animationView.visible(false)
-                    }
-                }.exhaustive
-            })
-        }
+                }
+                Status.ERROR -> {
+                    animationView.visible(false)
+                }
+            }.exhaustive
+        })
+    }
 
 }

@@ -8,10 +8,12 @@ import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import com.example.note.ui.base.BaseFragment
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 import shohjahon.example.akfa_app.R
 import shohjahon.example.akfa_app.adapter.ViewPagerAdapter
 import shohjahon.example.akfa_app.databinding.FragmentHomeBinding
 
+@AndroidEntryPoint
 class HomeFragment :BaseFragment<FragmentHomeBinding>(){
 
     override fun setBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentHomeBinding  = FragmentHomeBinding.inflate(layoutInflater)

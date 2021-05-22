@@ -11,6 +11,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
+import uz.fizmasoft.xatlov.db.preferences.PreferencesManager
 import uz.fizmasoft.xatlov.network.ApiService
 import uz.fizmasoft.xatlov.utils.Constants
 import java.util.concurrent.TimeUnit
@@ -20,20 +21,13 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-//    @Provides
-//    @Singleton
-//    fun provideAppDatabase(@ApplicationContext appContext: Context): AppDB =
-//        Room.databaseBuilder(
-//            appContext,
-//            AppDB::class.java,
-//            "app_database"
-//        ).fallbackToDestructiveMigration().build()
-//
-//    @Provides
-//    @Singleton
-//    fun provideCreateFragmentDAO(
-//        db: AppDB
-//    ): DAO = db.getNotesDAO()
+
+    @Provides
+    @Singleton
+    fun providePreferencesManager(
+        @ApplicationContext context: Context
+    ): PreferencesManager = PreferencesManager(context)
+
 
     @Provides
     @Singleton
@@ -58,4 +52,5 @@ object AppModule {
     @Singleton
     fun provideApi(retrofit: Retrofit): ApiService =
         retrofit.create(ApiService::class.java)
+
 }
