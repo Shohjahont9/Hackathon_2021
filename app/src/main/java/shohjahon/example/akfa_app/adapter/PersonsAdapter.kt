@@ -7,31 +7,33 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import shohjahon.example.akfa_app.databinding.ItemExpiredBinding
+import shohjahon.example.akfa_app.databinding.ItemPesonsBinding
+import shohjahon.example.akfa_app.model.Persons
 import shohjahon.example.akfa_app.network.response.expiredResponse.DataExperid
 import kotlin.collections.ArrayList
 
 
 @SuppressLint("SetTextI18n")
-class ExpiredAdapter(
+class PersonsAdapter(
     private val listener: CardAdapterListener
-) : ListAdapter<DataExperid, ExpiredAdapter.CardsViewHolder>(
+) : ListAdapter<Persons, PersonsAdapter.CardsViewHolder>(
     DIFF_JOB_CALLBACK
 ) {
 
-    private lateinit var fullDataList: ArrayList<DataExperid>
+    private lateinit var fullDataList: ArrayList<Persons>
 
 
     companion object {
-        val DIFF_JOB_CALLBACK = object : DiffUtil.ItemCallback<DataExperid>() {
+        val DIFF_JOB_CALLBACK = object : DiffUtil.ItemCallback<Persons>() {
             override fun areItemsTheSame(
-                oldItem: DataExperid,
-                newItem: DataExperid
-            ) = newItem.articul == oldItem.articul
+                oldItem: Persons,
+                newItem: Persons
+            ) = newItem.name== oldItem.name
 
             override fun areContentsTheSame(
-                oldItem: DataExperid,
-                newItem: DataExperid
-            ) = newItem.articul == oldItem.articul
+                oldItem: Persons,
+                newItem: Persons
+            ) = newItem.name == oldItem.name
 
         }
     }
@@ -39,17 +41,14 @@ class ExpiredAdapter(
     override fun getItemId(position: Int) = position.toLong()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        CardsViewHolder(
-            ItemExpiredBinding.inflate(LayoutInflater.from(parent.context),parent,false),
-            listener
-        )
+        CardsViewHolder(ItemPesonsBinding.inflate(LayoutInflater.from(parent.context),parent,false), listener)
 
     override fun onBindViewHolder(holder: CardsViewHolder, position: Int) {
         holder.setIsRecyclable(true)
         holder.bind()
     }
 
-    fun submitDataList(list: List<DataExperid>) {
+    fun submitDataList(list: List<Persons>) {
         submitList(list)
         println("list submit")
         fullDataList = ArrayList(list)
@@ -57,28 +56,18 @@ class ExpiredAdapter(
 
     inner class CardsViewHolder
     constructor(
-        private val binding: ItemExpiredBinding,
+        private val binding: ItemPesonsBinding,
         private val listener: CardAdapterListener
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind() {
             val data = getItem(adapterPosition)
             with(binding) {
 
-                tvName.text = data.type
+                tvName.text = data.name
 
-                tvSubName.text = data.saw
+                tvDescription.text = data.description
 
-                tvArticul.text = data.articul
-
-                tvLifeTime.text = "${data.remained} soat/ ${data.life_time} soat"
-
-                val progress = ((data.life_time!! - data.remained!!.toInt())/(data.life_time/100)).toString()
-
-                tvPercent.text = "$progress%"
-
-                circularProgressBar.progress = progress.toFloat()
-
-                root.setOnClickListener {
+                llLl.setOnClickListener {
                     if (adapterPosition != RecyclerView.NO_POSITION)
                         listener.onItemClick(adapterPosition, data)
                 }
@@ -88,7 +77,7 @@ class ExpiredAdapter(
 
 
     interface CardAdapterListener {
-        fun onItemClick(position: Int, data: DataExperid)
+        fun onItemClick(position: Int, data: Persons)
     }
 }
 

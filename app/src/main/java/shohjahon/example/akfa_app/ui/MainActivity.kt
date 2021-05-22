@@ -97,7 +97,6 @@ class MainActivity : AppCompatActivity() {
             drawerLayout.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
-            finishAffinity()
         }
     }
 

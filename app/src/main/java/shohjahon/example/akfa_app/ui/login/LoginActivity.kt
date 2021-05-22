@@ -70,7 +70,9 @@ class LoginActivity : AppCompatActivity() {
 
         }
 
+
     }
+
 
     private fun observeLogin() {
         viewModel.loginToApp.observe(this, Observer {

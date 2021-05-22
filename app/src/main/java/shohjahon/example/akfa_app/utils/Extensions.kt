@@ -30,15 +30,11 @@ fun View.visible(isVisible: Boolean) {
 }
 
 
-fun Fragment.nextPageMain(fragment: Fragment, tag: String, isBack: Boolean, bundle: Bundle) {
+fun Fragment.nextPageMain(fragment: Fragment, tag: String) {
     val fragmentManager = requireActivity().supportFragmentManager
     val transaction = fragmentManager.beginTransaction()
     transaction.setCustomAnimations(R.anim.slide_in, R.anim.slide_out)
-    fragment.setArguments(bundle)
-    if (isBack)
-        transaction.replace(R.id.frameFragment, fragment).addToBackStack(tag).commit()
-    else
-        transaction.replace(R.id.frameFragment, fragment).commit()
+    transaction.replace(R.id.frameFragment, fragment).addToBackStack(tag).commit()
 }
 
 
@@ -46,9 +42,8 @@ fun Fragment.backPageMain(fragment: Fragment) {
     val fragmentManager = requireActivity().supportFragmentManager
     val transaction = fragmentManager.beginTransaction()
     transaction.setCustomAnimations(R.anim.back_in, R.anim.back_out)
-        transaction.replace(R.id.frameFragment, fragment).commit()
+    transaction.replace(R.id.frameFragment, fragment).commit()
 }
-
 
 
 fun Fragment.hideKeyBoard(v: View) {
@@ -56,7 +51,7 @@ fun Fragment.hideKeyBoard(v: View) {
     imm.hideSoftInputFromWindow(v.windowToken, 0)
 }
 
-fun Fragment.timePicker(editText: EditText){
+fun Fragment.timePicker(editText: EditText) {
     val mcurrentTime = Calendar.getInstance()
     val year = mcurrentTime.get(Calendar.YEAR)
     val month = mcurrentTime.get(Calendar.MONTH)

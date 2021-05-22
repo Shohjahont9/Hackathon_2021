@@ -1,17 +1,18 @@
 package shohjahon.example.akfa_app.ui.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.viewpager2.widget.ViewPager2
 import com.example.note.ui.base.BaseFragment
+import com.example.note.ui.utils.nextPageMain
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragment_home.*
 import shohjahon.example.akfa_app.R
 import shohjahon.example.akfa_app.adapter.ViewPagerAdapter
 import shohjahon.example.akfa_app.databinding.FragmentHomeBinding
+import shohjahon.example.akfa_app.ui.persons.PersonsFragment
 
 @AndroidEntryPoint
 class HomeFragment :BaseFragment<FragmentHomeBinding>(){
@@ -23,6 +24,14 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>(){
 
         setViewPager()
 
+        onClicks()
+
+    }
+
+    private fun onClicks() {
+        ll_stanok.setOnClickListener{
+            nextPageMain(PersonsFragment(), "gg->Person")
+        }
     }
 
 

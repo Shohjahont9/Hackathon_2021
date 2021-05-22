@@ -14,7 +14,7 @@
             android:id="@+id/cv_bg"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_230sdp"
-            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardCornerRadius="@dimen/_15sdp"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
@@ -71,7 +71,7 @@
                         android:layout_gravity="center"
                         android:background="@drawable/bg_rl"
                         android:hint="Username"
-                        android:imeOptions="actionNext"
+                        android:imeOptions="actionDone"
                         android:maxLines="1" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -93,8 +93,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:background="@drawable/bg_rl"
+                        android:inputType="textPassword"
                         android:hint="Password"
-                        android:imeOptions="actionNext"
+                        android:imeOptions="actionDone"
                         android:maxLines="1" />
 
                 </com.google.android.material.textfield.TextInputLayout>
