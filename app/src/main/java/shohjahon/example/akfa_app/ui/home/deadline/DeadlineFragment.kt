@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.note.ui.base.BaseFragment
+import com.example.note.ui.utils.EventObserver
 import com.example.note.ui.utils.toast
 import com.example.note.ui.utils.visible
 import dagger.hilt.android.AndroidEntryPoint
@@ -40,12 +41,13 @@ class DeadlineFragment(fragment: Fragment) : BaseFragment<FragmentDeadlineBindin
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        listOfDeadline.clear()
         loadData()
     }
 
     private fun loadData() {
         viewModel.expired(preferences.userToken)
-        viewModel.expiredData.observe(viewLifecycleOwner, Observer {
+        viewModel.expiredData.observe(viewLifecycleOwner, EventObserver {
             with(binding!!) {
                 when (it.status) {
                     LOADING -> animationView.visible(true)

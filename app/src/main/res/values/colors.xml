@@ -11,6 +11,8 @@
 
 
     <color name="red_custom">#E33939</color>
-
+    <color name="blue_custom">#4044FC</color>
+    <color name="bb_custom">#9092F8</color>
+    <color name="gray_custom">#AE575656</color>
 
 </resources>

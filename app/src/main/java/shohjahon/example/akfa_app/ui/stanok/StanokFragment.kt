@@ -1,28 +1,26 @@
 package shohjahon.example.akfa_app.ui.stanok
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.util.Pair
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.note.ui.base.BaseFragment
 import com.example.note.ui.utils.toast
 import com.example.note.ui.utils.visible
+import com.google.android.material.datepicker.MaterialDatePicker
 import dagger.hilt.android.AndroidEntryPoint
-import shohjahon.example.akfa_app.R
-import shohjahon.example.akfa_app.adapter.ExpiredAdapter
 import shohjahon.example.akfa_app.adapter.ItemsAdapter
 import shohjahon.example.akfa_app.databinding.FragmentStanokBinding
-import shohjahon.example.akfa_app.network.response.expiredResponse.DataExperid
 import shohjahon.example.akfa_app.network.response.items.DataItems
-import shohjahon.example.akfa_app.ui.home.deadline.DeadlineViewModel
 import shohjahon.example.akfa_app.utils.exhaustive
 import uz.fizmasoft.xatlov.db.preferences.PreferencesManager
 import uz.fizmasoft.xatlov.utils.Status
 import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class StanokFragment : BaseFragment<FragmentStanokBinding>(), ItemsAdapter.CardAdapterListener {
@@ -48,6 +46,29 @@ class StanokFragment : BaseFragment<FragmentStanokBinding>(), ItemsAdapter.CardA
 
         loadData()
 
+
+
+        onCliks()
+
+    }
+
+    private fun onCliks() {
+        binding!!.cvDate.setOnClickListener {
+            val materialDateBuilder = MaterialDatePicker.Builder.dateRangePicker()
+
+            materialDateBuilder.setTitleText("SELECT A DATE")
+            val materialDatePicker: MaterialDatePicker<*> = materialDateBuilder.build()
+
+
+            materialDatePicker.show(parentFragmentManager, "MATERIAL_DATE_PICKER")
+
+            materialDatePicker.addOnPositiveButtonClickListener {
+
+//                mShowSelectedDateText.setText("Selected Date is : " + materialDatePicker.headerText)
+
+            }
+
+        }
     }
 
     private fun loadData() {

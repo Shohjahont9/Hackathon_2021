@@ -10,35 +10,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-     <LinearLayout
-         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
         <LinearLayout
-            android:id="@+id/ll_top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_90sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:focusable="true"
-                android:outlineAmbientShadowColor="#F30000"
-                app:cardBackgroundColor="#F30000"
-                app:cardCornerRadius="@dimen/_10sdp"
-                app:cardElevation="@dimen/_5sdp"
-                tools:targetApi="p">
+            <LinearLayout
+                android:id="@+id/ll_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:outlineAmbientShadowColor="#F30000"
+                    app:cardBackgroundColor="#F30000"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp"
+                    tools:targetApi="p">
 
                     <LinearLayout
                         android:id="@+id/ll_stanok"
@@ -66,23 +66,23 @@
 
                     </LinearLayout>
 
-            </com.google.android.material.card.MaterialCardView>
+                </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_90sdp"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:focusable="true"
-                android:outlineAmbientShadowColor="#E6AF08"
-                app:cardBackgroundColor="#E6AF08"
-                app:cardCornerRadius="@dimen/_10sdp"
-                app:cardElevation="@dimen/_5sdp"
-                tools:targetApi="p">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:outlineAmbientShadowColor="#E6AF08"
+                    app:cardBackgroundColor="#E6AF08"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp"
+                    tools:targetApi="p">
 
                     <LinearLayout
                         android:id="@+id/ll_broken"
@@ -110,23 +110,23 @@
 
                     </LinearLayout>
 
-            </com.google.android.material.card.MaterialCardView>
+                </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_90sdp"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:focusable="true"
-                android:outlineAmbientShadowColor="#4244FA"
-                app:cardBackgroundColor="#4244FA"
-                app:cardCornerRadius="@dimen/_10sdp"
-                app:cardElevation="@dimen/_5sdp"
-                tools:targetApi="p">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:outlineAmbientShadowColor="#4244FA"
+                    app:cardBackgroundColor="#4244FA"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp"
+                    tools:targetApi="p">
 
                     <LinearLayout
                         android:id="@+id/ll_shop"
@@ -154,54 +154,122 @@
                     </LinearLayout>
 
 
-            </com.google.android.material.card.MaterialCardView>
+                </com.google.android.material.card.MaterialCardView>
 
 
-        </LinearLayout>
-        
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/ll_top"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:text="Yangiliklar:"
-            android:fontFamily="@font/g_regular"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_16ssp"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:id="@+id/tv_yar"/>
+            </LinearLayout>
 
-
-        <LinearLayout
-            android:id="@+id/ll_fragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_yar">
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab_layout"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_25sdp"
-                android:layout_marginStart="@dimen/_16sdp"
-                android:layout_marginEnd="@dimen/_16sdp"
-                app:tabBackground="@drawable/tab_background"
-                app:tabIndicatorHeight="0dp"
-                app:tabMode="fixed"
-                app:tabPadding="@dimen/_5sdp"
-                app:tabSelectedTextColor="@color/red_custom"/>
+                android:layout_height="wrap_content">
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/view_pager"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_date"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardElevation="@dimen/_2sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_4sdp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/g_regular"
+                            android:textColor="@color/black"
+                            android:gravity="center"
+                            android:text="Пружина:"
+                            android:textSize="@dimen/_11ssp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/cv_date"
+                    android:fontFamily="@font/g_regular"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:textColor="@color/black"
+                    android:text="22-05-2021"
+                    android:textSize="@dimen/_11ssp" />
+
+            </RelativeLayout>
+
+            <com.yabu.livechart.view.LiveChart
+                android:id="@+id/live_chart"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_160sdp"
+                android:paddingBottom="@dimen/_4sdp"
+                app:baselineColor="@color/red_custom"
+                app:baselineDashGap="8dp"
+                app:baselineStrokeWidth="4dp"
+                app:boundsColor="@color/gray_custom"
+                app:fillColor="@color/bb_custom"
+                app:labelTextColor="@color/blue_custom"
+                app:labelTextHeight="14sp"
+                app:mainCornerRadius="4dp"
+                app:overlayCircleColor="@color/bb_custom"
+                app:overlayCircleDiameter="8dp"
+                app:overlayLineColor="@color/bb_custom"
+                app:pathColor="@color/blue_custom"
+                app:pathStrokeWidth="4dp"
+                app:positiveColor="@color/bb_custom"
+                app:secondCornerRadius="4dp"
+                app:secondPathColor="@color/blue_custom" />
+
+            <TextView
+                android:id="@+id/tv_yar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/g_regular"
+                android:text="Yangiliklar:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_top" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/_4sdp" />
-        </LinearLayout>
+                android:layout_marginTop="@dimen/_8sdp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_yar">
 
-    </LinearLayout>
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    app:tabBackground="@drawable/tab_background"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabMode="fixed"
+                    app:tabPadding="@dimen/_5sdp"
+                    app:tabSelectedTextColor="@color/red_custom" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_4sdp" />
+            </LinearLayout>
+
+        </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
