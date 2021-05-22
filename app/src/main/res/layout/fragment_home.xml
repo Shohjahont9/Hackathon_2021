@@ -26,6 +26,7 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
+                    android:id="@+id/ll_stanok"
                     android:layout_height="@dimen/_90sdp"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
@@ -41,7 +42,6 @@
                     tools:targetApi="p">
 
                     <LinearLayout
-                        android:id="@+id/ll_stanok"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
@@ -61,7 +61,7 @@
                             android:fontFamily="@font/g_black"
                             android:gravity="center_horizontal"
                             android:scrollbarSize="@dimen/_18ssp"
-                            android:text="Stanoklar"
+                            android:text="Оборудование"
                             android:textColor="@color/white" />
 
                     </LinearLayout>
@@ -105,7 +105,7 @@
                             android:fontFamily="@font/g_black"
                             android:gravity="center_horizontal"
                             android:scrollbarSize="@dimen/_18ssp"
-                            android:text="Buzulganlar"
+                            android:text="Неисправные"
                             android:textColor="@color/white" />
 
                     </LinearLayout>
@@ -148,7 +148,7 @@
                             android:fontFamily="@font/g_black"
                             android:gravity="center_horizontal"
                             android:scrollbarSize="@dimen/_18ssp"
-                            android:text="Magazin"
+                            android:text="Магазин"
                             android:textColor="@color/white" />
 
                     </LinearLayout>
@@ -234,7 +234,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:fontFamily="@font/g_regular"
-                android:text="Yangiliklar:"
+                android:text="Новости:"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_16ssp"
                 app:layout_constraintStart_toStartOf="parent"

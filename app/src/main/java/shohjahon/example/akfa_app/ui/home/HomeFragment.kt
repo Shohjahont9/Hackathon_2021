@@ -127,8 +127,8 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>(){
             viewPager.isUserInputEnabled = true
             val tabLayoutMediator = TabLayoutMediator(tabLayout, viewPager) { tab, position ->
                 when (position) {
-                    0 -> tab.text = "Muddati yaqin"
-                    1 -> tab.text = "Nagruzka"
+                    0 -> tab.text = "Состояние"
+                    1 -> tab.text = "Под нагрузкой"
                 }
             }
             tabLayoutMediator.attach()

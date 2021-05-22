@@ -73,11 +73,11 @@ class ItemsAdapter(
                 val progress = ((data.life_time!! - data.remained_hours!!.toInt())/(data.life_time/100)).toString()
                 val progressHor = ((data.initial_details!! - data.remained_details!!.toInt())/(data.initial_details/100)).toString()
 
-                tvHours.text = "${ data.remained_hours } soat/${data.life_time} soat"
+                tvHours.text = "${ data.remained_hours } ч/${data.life_time} ч"
 
                 tvPercent.text = "$progress%"
 
-                tvItems.text = "${ data.remained_details} ta/${data.initial_details} ta"
+                tvItems.text = "${ data.remained_details} шт/${data.initial_details} шт"
 
                 circularProgressBar.progress = progress.toFloat()
 

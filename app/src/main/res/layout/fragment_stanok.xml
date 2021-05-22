@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/g_regular"
                     android:gravity="center"
-                    android:text="Sana:20-10-2020"
+                    android:text="Дата: 20-10-2020"
                     android:textSize="@dimen/_11ssp" />
 
             </LinearLayout>

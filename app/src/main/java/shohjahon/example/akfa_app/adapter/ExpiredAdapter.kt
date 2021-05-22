@@ -70,7 +70,7 @@ class ExpiredAdapter(
 
                 tvArticul.text = data.articul
 
-                tvLifeTime.text = "${data.remained} soat/ ${data.life_time} soat"
+                tvLifeTime.text = "${data.remained} ч/ ${data.life_time} ч"
 
                 val progress = ((data.life_time!! - data.remained!!.toInt())/(data.life_time/100)).toString()
 

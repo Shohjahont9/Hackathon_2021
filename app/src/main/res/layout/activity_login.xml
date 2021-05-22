@@ -93,9 +93,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:background="@drawable/bg_rl"
-                        android:inputType="textPassword"
                         android:hint="Password"
                         android:imeOptions="actionDone"
+                        android:inputType="textPassword"
                         android:maxLines="1" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -104,18 +104,28 @@
 
         </androidx.cardview.widget.CardView>
 
-
-        <com.airbnb.lottie.LottieAnimationView
+        <RelativeLayout
             android:id="@+id/animationView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:visibility="gone"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@id/llyes"
-            app:layout_constraintTop_toBottomOf="@id/cv_login"
-            app:lottie_autoPlay="true"
-            app:lottie_fileName="loading.json"
-            app:lottie_loop="true"
-            app:lottie_url="REPLACE_JSON_URL" />
+            app:layout_constraintTop_toBottomOf="@id/cv_login">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="loading.json"
+                app:lottie_loop="true"
+                app:lottie_url="REPLACE_JSON_URL" />
+
+            <ImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/logo"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/llyes"
