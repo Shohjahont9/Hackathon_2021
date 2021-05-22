@@ -22,11 +22,11 @@ interface ApiService {
 
 
     @Headers("Content-Type: application/json")
-    @GET("analysis/saw/details?saw=SAW3&date=2020-11-05")
+    @GET("analysis/saw/details")
     suspend fun items(
+        @Query("saw") saw:String,
         @Header("token") token: String,
     ): ItemsResponse
-
 
 
 }

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.note.ui.base.BaseFragment
 import com.example.note.ui.utils.nextPageMain
+import shohjahon.example.akfa_app.R
 import shohjahon.example.akfa_app.adapter.PersonsAdapter
 import shohjahon.example.akfa_app.databinding.FragmentPersonsBinding
 import shohjahon.example.akfa_app.model.Persons
@@ -52,7 +53,21 @@ class PersonsFragment : BaseFragment<FragmentPersonsBinding>(), PersonsAdapter.C
     }
 
     override fun onItemClick(position: Int, data: Persons) {
-        nextPageMain(StanokFragment(), StanokFragment().toString())
+        val bundle = Bundle()
+        val fragment = StanokFragment()
+        var saw = ""
+        when(position){
+            0-> saw="SAW1"
+            1-> saw="SAW2"
+            2-> saw="SAW3"
+        }
+        bundle.putString("saw", saw)
+        val fragmentManager = requireActivity().supportFragmentManager
+        val transaction = fragmentManager.beginTransaction()
+        transaction.setCustomAnimations(R.anim.slide_in, R.anim.slide_out)
+        fragment.setArguments(bundle)
+
+        transaction.replace(R.id.frameFragment, fragment).addToBackStack(StanokFragment().toString()).commit()
     }
 
 

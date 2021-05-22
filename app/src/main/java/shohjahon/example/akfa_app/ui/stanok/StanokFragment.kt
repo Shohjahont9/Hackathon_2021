@@ -30,7 +30,7 @@ class StanokFragment : BaseFragment<FragmentStanokBinding>(), ItemsAdapter.CardA
     lateinit var mAdapter: ItemsAdapter
     val listOfStanok = ArrayList<DataItems>()
     private val viewModel: StanokViewModel by viewModels()
-
+        var saw = ""
     @Inject
     lateinit var preferences: PreferencesManager
 
@@ -42,12 +42,16 @@ class StanokFragment : BaseFragment<FragmentStanokBinding>(), ItemsAdapter.CardA
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        arguments.let {
+            saw = it!!.getString("saw").toString()
+        }
+
         loadData()
 
     }
 
     private fun loadData() {
-        viewModel.stanok(preferences.userToken)
+        viewModel.stanok(saw, preferences.userToken)
         viewModel.stanokData.observe(viewLifecycleOwner, Observer {
             with(binding!!) {
                 when (it.status) {

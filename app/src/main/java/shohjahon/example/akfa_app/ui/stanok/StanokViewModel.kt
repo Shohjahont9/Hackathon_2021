@@ -19,10 +19,10 @@ class StanokViewModel @Inject constructor(
     private val _stanokData = MutableLiveData<Resource<ItemsResponse>>()
     val stanokData: LiveData<Resource<ItemsResponse>> = _stanokData
 
-    fun stanok(token: String) = viewModelScope.launch {
+    fun stanok( saw:String, token:String) = viewModelScope.launch {
         _stanokData.value = Resource.loading(null)
         try {
-            _stanokData.value = Resource.success(repository.items(token))
+            _stanokData.value = Resource.success(repository.items(saw, token))
         } catch (e: Exception) {
             Log.d("ERROR", "stanok error -> stanok view model")
         }
