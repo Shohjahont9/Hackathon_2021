@@ -4,27 +4,27 @@
         android:id="@+id/home"
         android:checked="true"
         android:icon="@drawable/ic_home"
-        android:title="Home" />
+        android:title="Главная" />
     <item
         android:id="@+id/broken"
         android:checked="true"
         android:icon="@drawable/ic_broken"
         android:iconTint="@color/black"
-        android:title="Buzulganlar" />
+        android:title="Неисправные" />
     <item
         android:id="@+id/shop"
         android:checked="true"
         android:icon="@drawable/ic_shop"
         android:iconTint="@color/black"
-        android:title="Magazin" />
+        android:title="Магазин" />
 
     <item
         android:id="@+id/settings"
         android:icon="@drawable/ic_settings"
-        android:title="Settings" />
+        android:title="Настройки" />
 
     <item
         android:id="@+id/profile"
         android:icon="@drawable/ic_user"
-        android:title="User" />
+        android:title="Пользователь" />
 </menu>

@@ -34,9 +34,9 @@ class PersonsFragment : BaseFragment<FragmentPersonsBinding>(), PersonsAdapter.C
     }
 
     private fun initList() {
-        listOfPersons.add(Persons("Saw1", "Asil"))
-        listOfPersons.add(Persons("Saw2", "Anvar"))
-        listOfPersons.add(Persons("Saw3", "Akbar"))
+        listOfPersons.add(Persons("Saw1", "Cарвар Хакимов"))
+        listOfPersons.add(Persons("Saw2", "Акмал Нуров"))
+        listOfPersons.add(Persons("Saw3", "Саид Маматов"))
 
         initRv()
 
