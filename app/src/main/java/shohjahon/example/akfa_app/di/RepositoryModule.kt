@@ -7,6 +7,7 @@ import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
 import shohjahon.example.akfa_app.ui.home.deadline.DeadlineRepository
 import shohjahon.example.akfa_app.ui.login.LoginRepository
+import shohjahon.example.akfa_app.ui.stanok.StanokRepository
 import uz.fizmasoft.xatlov.network.ApiService
 
 @Module
@@ -24,6 +25,12 @@ object RepositoryModule {
     fun provideDeadlineRepository(
         api:ApiService
     ): DeadlineRepository = DeadlineRepository(api)
+
+    @Provides
+    @ViewModelScoped
+    fun provideStanokRepository(
+        api:ApiService
+    ): StanokRepository = StanokRepository(api)
 
 
 }

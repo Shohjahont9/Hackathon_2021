@@ -12,9 +12,12 @@ import androidx.fragment.app.Fragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import shohjahon.example.akfa_app.R
+import shohjahon.example.akfa_app.ui.broken.BrokenFragment
 import shohjahon.example.akfa_app.ui.home.HomeFragment
 import shohjahon.example.akfa_app.ui.profile.ProfileFragment
 import shohjahon.example.akfa_app.ui.settings.SettingsFragment
+import shohjahon.example.akfa_app.ui.shop.ShopFragment
+
 @AndroidEntryPoint
 
 @Suppress("DEPRECATION")
@@ -69,6 +72,14 @@ class MainActivity : AppCompatActivity() {
                     drawerLayout.closeDrawer(GravityCompat.START)
                 }
 
+                R.id.broken -> {
+                    changePage(BrokenFragment())
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                }
+                R.id.shop -> {
+                    changePage(ShopFragment())
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                }
                 R.id.settings -> {
                     changePage(SettingsFragment())
                     drawerLayout.closeDrawer(GravityCompat.START)

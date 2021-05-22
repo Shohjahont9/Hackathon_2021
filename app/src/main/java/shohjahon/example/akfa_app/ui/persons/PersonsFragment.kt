@@ -1,22 +1,15 @@
 package shohjahon.example.akfa_app.ui.persons
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.note.ui.base.BaseFragment
-import com.example.note.ui.utils.backPageMain
 import com.example.note.ui.utils.nextPageMain
-import com.example.note.ui.utils.toast
-import shohjahon.example.akfa_app.adapter.ExpiredAdapter
 import shohjahon.example.akfa_app.adapter.PersonsAdapter
 import shohjahon.example.akfa_app.databinding.FragmentPersonsBinding
 import shohjahon.example.akfa_app.model.Persons
-import shohjahon.example.akfa_app.ui.home.HomeFragment
 import shohjahon.example.akfa_app.ui.stanok.StanokFragment
 
 
@@ -33,24 +26,26 @@ class PersonsFragment : BaseFragment<FragmentPersonsBinding>(), PersonsAdapter.C
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        listOfPersons.clear()
+
         initList()
 
     }
 
     private fun initList() {
-        listOfPersons.add(Persons("Shohjahon", "4-stanokchi"))
-        listOfPersons.add(Persons("Sarvar", "3-stanokchi"))
-        listOfPersons.add(Persons("Axmadullo", "1-stanokchi"))
-        listOfPersons.add(Persons("Bekzod", "1-stanokchi"))
-        listOfPersons.add(Persons("Komil", "2-stanokchi"))
+        listOfPersons.add(Persons("Saw1", "Asil"))
+        listOfPersons.add(Persons("Saw2", "Anvar"))
+        listOfPersons.add(Persons("Saw3", "Akbar"))
+
         initRv()
+
         mAdapter.submitDataList(listOfPersons)
     }
 
     private fun initRv() {
         mAdapter = PersonsAdapter(this)
         binding!!.rv.apply {
-            layoutManager = GridLayoutManager(requireContext(), 3)
+            layoutManager = GridLayoutManager(requireContext(), 2)
             setHasFixedSize(true)
             adapter = mAdapter
         }
